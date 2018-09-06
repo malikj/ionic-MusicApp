@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Music</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+    <ion-card *ngFor="let music of allMusic">
+
+      <ion-card-header>
+        <button (click)="addToFavorites(music)" ion-button block> Add To Favorites</button>
+        </ion-card-header>
+      <img [src]="music.image">
+      <ion-card-content>
+        <ion-card-title>{{music.name}}</ion-card-title>
+        <ion-item>
+          <button ion-button item-left (click)="shareSong(music)">
+            Share
+          </button>
+          <button ion-button item-right (click)="goToMusicPlayer(music)">
+            Listen
+          </button>
+        </ion-item>
+      </ion-card-content>
+    </ion-card>
+  </ion-content>
+
+
+  
